@@ -1,11 +1,17 @@
-# LWC Scheduler Service
+# Consent Capture
 
-Recently, I was building a Salesforce Labs App that required me to enable a user to schedule an Apex job from the UI. I quickly realised I didn't know enought about the proccess and found a lack of information about the topic. I've written a basic overview of how to manage scheduled jobs from the UI and give your apps a bit more setup capability.
+Consent Capture is a Salesforce Labs App used to create and manage Contact Point Type Consent Records in the context of people records in Salesforce. There are a number of Lightning Web Components, currently inside of Aura Components that are exposed for use in the included Flow Template.
 
-## Solution Overview
+[Video Overview](https://www.youtube.com/watch?v=cMfEvTpUPoY)
 
-...
+Features:
 
-### Getting Started
+- Manage consent records for your contacts, leads, & users
+- Track expiration of consent
+- Track opt-outs
+- Ensure your team has access to the right information
+- Create and manage consent directly in Flow
 
-...
+## Installation
+
+Get Consent Capture from the [AppExchange](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FMiVQUA1)!
