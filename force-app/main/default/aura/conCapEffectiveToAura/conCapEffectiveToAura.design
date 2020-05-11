@@ -1,0 +1,7 @@
+<!--
+ - Created by stephan.garcia on 2019-09-05.
+ -->
+
+<design:component>
+    <design:attribute name="effectiveMonths" label="Effective To Months" />
+</design:component>

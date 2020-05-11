@@ -1,0 +1,31 @@
+.concap-table-subheading{
+
+    font-weight:bold;
+
+}
+
+.concap-table-heading-width{
+
+    width:33.33%;
+
+}
+
+.cc-icon-box-valid{
+
+    border: 2px solid #006700;
+    border-radius: 4px;
+}
+
+.cc-icon-valid{
+
+    fill: #006700;
+
+}
+
+.spinner-container{
+
+    position: relative;
+    min-height: 200px;
+    width: 100%;
+
+}

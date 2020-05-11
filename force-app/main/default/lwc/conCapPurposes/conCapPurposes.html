@@ -1,0 +1,63 @@
+<template>
+    <div class="slds-grid">
+        <div class="slds-size--1-of-1">
+            <div class="slds-card">
+                <template if:true={loading}>
+                    <div class="spinner-container slds-align-middle">
+                        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                    </div>
+                </template>
+                <template if:false={loading}>
+                    <div class="slds-grid slds-wrap slds-align--absolute-center">
+                        <div class="slds-size--1-of-1 slds-p-left--small slds-p-right--small slds-p-top--small slds-align-middle">
+                            <p class="slds-text-body--regular slds-text-color_weak slds-wrap slds-text-align--center">
+                                What is the category of this consent?</p>
+                        </div>
+                        <div class="slds-col slds-size--1-of-1 slds-align--absolute-center slds-p-around--x-small">
+                            <div class="slds-grid slds-wrap slds-align--absolute-center">
+                                <template for:each={LegalBases} for:item="item" for:index="index">
+                                    <div key={item.Name} class="slds-p-around--x-small">
+                                        <div class="button-container-width">
+                                            <c-con-cap-block-button item={item}
+                                                                    selected-item={selectedItemName}
+                                                                    show-name='true'
+                                                                    show-description='false'
+                                                                    align='center'
+                                                                    min-height='120px'
+                                                                    min-width='120px'
+                                                                    onbuttonclick={handleLegalBasisClick}>
+
+                                            </c-con-cap-block-button>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="slds-size--1-of-1 slds-p-left--small slds-p-right--small slds-p-top--small slds-align-middle">
+                            <p class="slds-text-body--regular slds-text-color_weak slds-wrap slds-text-align--center">
+                                For which purpose would you like to record their consent type?</p>
+                        </div>
+                        <div class="slds-size--1-of-1 slds-p-around--x-small">
+                            <ul>
+                                <template for:each={purposes} for:item="purpose">
+                                    <li class="slds-p-bottom--xx-small" key={purpose.Id}>
+                                        <c-con-cap-block-button item={purpose}
+                                                                selected-item={selectedPurposeName}
+                                                                show-name='true'
+                                                                show-description='true'
+                                                                align='left'
+                                                                min-height='60px'
+                                                                min-width='60px'
+                                                                onbuttonclick={handlePurposeClick}>
+
+                                        </c-con-cap-block-button>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

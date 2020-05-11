@@ -1,0 +1,56 @@
+<template>
+    <div class="slds-grid slds-wrap slds-grid_align-center">
+        <div class="slds-size--1-of-1">
+            <div class="slds-box slds-box--border slds-has-top-magnet slds-has-bottom-magnet">
+                <div class="slds-grid">
+                    <div class="slds-size--1-of-1">
+                        <div class="slds-p-around--medium">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size--1-of-12 slds-align--absolute-center" onclick={changeState}>
+                                    <lightning-icon icon-name={iconState} title={iconStateTitle}
+                                                    alternative-text={iconStateAlternativeText}
+                                                    size="small"></lightning-icon>
+                                </div>
+                                <div class="slds-size--11-of-12">
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-size--1-of-1">
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-size--2-of-12 slds-align--absolute-center">
+                                                    <lightning-icon icon-name={item.iconName} title={item.type}
+                                                                    alternative-text={item.type}></lightning-icon>
+                                                </div>
+                                                <div class="slds-size--10-of-12">
+                                                    <div class="slds-grid slds-wrap">
+                                                        <div class="slds-size--1-of-1">
+                                                            <div class="slds-text-heading--small cc-text-bold">{item.type}
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-size--1-of-1">
+                                                            <div class="slds-text-body--regular slds-wrap">{item.description}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <template if:true={showDetails}>
+            <template for:each={item.data} for:item="data">
+                <div key={data.Id} class="slds-size--11-of-12 slds-box slds-box--border slds-has-bottom-magnet slds-has-top-magnet">
+                    <div class="slds-grid">
+                        <div class="slds-size--1-of-1">
+                            <c-con-cap-display-type-purpose item={data}></c-con-cap-display-type-purpose>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </template>
+    </div>
+</template>

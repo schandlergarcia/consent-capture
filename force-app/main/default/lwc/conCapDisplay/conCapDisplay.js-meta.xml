@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>46.0</apiVersion>
+    <description>Consent Capture main display component</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Consent Capture Display</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" label="Record Id" description="Flow input field" type="String" role="inputOnly" />
+            <property name="sObjectType" label="SObject Type" description="Flow output field" type="String" role="outputOnly" />
+            <property name="individualId" label="Individual Id" description="Flow output field" type="String" role="outputOnly" />
+        </targetConfig>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Contact</object>
+                <object>Lead</object>
+                <object>User</object>
+            </objects>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

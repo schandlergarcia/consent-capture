@@ -1,0 +1,7 @@
+<!--
+ - Created by stephan.garcia on 2019-09-03.
+ -->
+
+<design:component>
+    <design:attribute name="captureType" label="Capture Contact Point Type" />
+</design:component>

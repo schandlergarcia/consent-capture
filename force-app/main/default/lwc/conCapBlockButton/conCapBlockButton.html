@@ -1,0 +1,27 @@
+<template>
+    <div class="slds-grid">
+        <div class="slds-size--1-of-1">
+            <div onclick={selectItem}>
+                <div class="slds-box cc-box slds-p-around--small slds-align--absolute-center" style={selectedStyle}>
+                    <div class="slds-grid slds-wrap cc-box-inner">
+                        <div class="slds-size--1-of-1 slds-align-middle">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size--1-of-1 slds-align-middle">
+                                    <template if:true={getShowName}>
+                                        <p class="slds-text-heading--small slds-wrap slds-hyphenate" style={textAlignment}>{item.Name}</p>
+                                    </template>
+                                </div>
+                                <div class="slds-size--1-of-1 slds-align-middle">
+                                    <template if:true={getShowDescription}>
+                                        <p class="slds-text-body--regular slds-wrap" style={textAlignment}>{item.Description}
+                                        </p>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

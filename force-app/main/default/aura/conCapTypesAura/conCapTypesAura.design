@@ -1,0 +1,7 @@
+<!--
+ - Created by stephan.garcia on 2019-09-04.
+ -->
+
+<design:component>
+    <design:attribute name="contactPointConsentType" label="Contact Point Consent Type" />
+</design:component>

@@ -1,0 +1,8 @@
+<aura:component implements="force:hasRecordId,lightning:availableForFlowScreens" description="A Container for the Effective To Component" access="global">
+
+    <aura:attribute name="recordId" type="String" access="Global" description="The recordId passed from the flow into the AuraComponent then to the LWC"/>
+    <aura:attribute name="effectiveMonths" type="Integer" access="Global" description="The effectiveMonths passed from the LWC into the AuraComponent"/>
+
+    <c:conCapEffectiveTo oneffectivetoset="{!c.handleEffectiveToSet}"/>
+
+</aura:component>

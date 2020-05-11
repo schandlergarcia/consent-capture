@@ -1,0 +1,13 @@
+<!--
+ - Created by stephan.garcia on 2019-08-31.
+ -->
+
+<aura:component implements="force:hasRecordId,lightning:availableForFlowScreens" description="A Container for the Consent Capture Display Component">
+
+    <aura:attribute name="recordId" type="String" access="Global" description="The recordId passed from the flow into the AuraComponent then to the LWC"/>
+    <aura:attribute name="dataUsePurposeId" type="String" access="Global" description="The dataUsePurposeId passed from the LWC into the AuraComponent"/>
+    <aura:attribute name="dataUsePurposeName" type="String" access="Global" description="The dataUsePurposeName passed from the LWC into the AuraComponent"/>
+
+    <c:consentCaptureDUPSelector ondatausepurposenameset="{!c.handleDataUsePurposeNameSet}" ondatausepurposeidset="{!c.handleDataUsePurposeIdSet}"/>
+
+</aura:component>

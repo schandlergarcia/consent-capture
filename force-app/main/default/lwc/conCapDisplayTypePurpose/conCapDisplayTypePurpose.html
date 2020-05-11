@@ -1,0 +1,28 @@
+<template>
+    <div style={activeStyle}>
+        <div class="slds-p-around--small">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-size--1-of-1">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-size--10-of-12">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size--1-of-1">
+                                    <a class="slds-text-body--regular cc-text-bold"
+                                       onclick={viewRecord}>{item.DataUsePurpose.Name}</a>
+                                </div>
+                                <div class="slds-size--1-of-1">
+                                    <div class="slds-text-body--regular slds-wrap">{item.DataUsePurpose.Description}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size--2-of-12 slds-align--absolute-center">
+                            <lightning-icon icon-name={iconState} alternative-text={iconStateAlternativeText}
+                                            title={iconStateTitle} variant={iconStateVariant}></lightning-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
