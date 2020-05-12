@@ -92,7 +92,7 @@ public with sharing class IndividualUtilities {
     public static Id getIndividualIdFromPersonAccount(Id recordId) {
         String queryString = 'SELECT PersonIndividualId FROM Account WHERE Id = :recordId WITH SECURITY_ENFORCED LIMIT 1';
         SObject personAccountList = Database.query(queryString);
-        if((Boolean)personAccountList.get('PersonIndividualId')){
+        if((Id)personAccountList.get('PersonIndividualId') != null){
             return (Id)personAccountList.get('PersonIndividualId');
         } else {
             return null;
