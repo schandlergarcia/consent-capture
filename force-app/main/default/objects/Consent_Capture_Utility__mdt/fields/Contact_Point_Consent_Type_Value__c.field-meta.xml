@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Point_Consent_Type_Value__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The corresponding picklist value for the contact point consent type</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Email, Phone, Web...</inlineHelpText>
+    <label>Contact Point Consent Type Value</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

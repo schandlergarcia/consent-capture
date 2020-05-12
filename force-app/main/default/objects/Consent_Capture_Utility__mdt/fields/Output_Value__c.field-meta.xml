@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Output_Value__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The output value of the setting, ie the description of the consent type.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>The description of the consent type</inlineHelpText>
+    <label>Output Value</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>
