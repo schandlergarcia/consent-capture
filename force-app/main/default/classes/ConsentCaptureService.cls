@@ -1,5 +1,4 @@
 /**
- * Created by stephan.garcia on 2019-09-04.
  * The Consent Capture Services is used to gather consent records and format them in a way that the UI can consume.
  * It aggregates the contact point type consent records by their type then enriches the data with custom metadata types and icons.
  */
@@ -36,6 +35,7 @@ public with sharing class ConsentCaptureService {
                                                         AND ContactPointType = :cpTypeListString
                                                         WITH SECURITY_ENFORCED];
             Map<String, Object> consentMap = new Map<String, Object>();
+            //todo: map to a custom metadata type
             switch on cpTypeListString {
                 when 'Email' {
                     consentMap.put('iconName', 'utility:email');
@@ -165,6 +165,7 @@ public with sharing class ConsentCaptureService {
     }
 
     // Map the Consent Types to a Name and Icon
+    //todo: map to a custom metadata type
     public static Map<String, Object> getConsentType(String consentTypeLabel) {
         Map<String, Object> consentMap = new Map<String, Object>();
         switch on consentTypeLabel {
