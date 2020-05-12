@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>46.0</apiVersion>
-    <description>Consent Capture Slider for the Effective To Component</description>
+    <description
+  >Consent Capture Slider for the Effective To Component</description>
     <isExposed>true</isExposed>
     <masterLabel>Consent Capture Effective To</masterLabel>
 </LightningComponentBundle>

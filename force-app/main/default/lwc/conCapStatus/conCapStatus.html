@@ -1,38 +1,55 @@
 <template>
-    <div class="slds-grid">
-        <div class="slds-size--1-of-1">
-            <div class="slds-card">
-                <template if:true={loading}>
-                    <div class="spinner-container slds-align-middle">
-                        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
-                    </div>
-                </template>
-                <template if:false={loading}>
-                    <div class="slds-grid slds-wrap slds-align--absolute-center">
-                        <div class="slds-size--1-of-1 slds-p-left--small slds-p-right--small slds-p-top--small slds-align-middle">
-                            <p class="slds-text-body--regular slds-text-color_weak slds-wrap">How aware is the
-                                individual of this consent?</p>
-                        </div>
-                        <div class="slds-col slds-size--1-of-1 slds-align--absolute-center slds-p-around--x-small">
-                            <div class="slds-grid slds-wrap slds-grid_align-center">
-                                <template for:each={statusTypes} for:item="item" for:index="index">
-                                    <div key={item.Name} class="slds-size--1-of-4 slds-p-around--xx-small">
-                                        <c-con-cap-block-button item={item}
-                                                                selected-item={selectedItemName}
-                                                                show-name='true'
-                                                                show-description='false'
-                                                                align='center'
-                                                                min-height='100px'
-                                                                min-widtht='50px'
-                                                                onbuttonclick={handleStatusTypeClick}>
-                                        </c-con-cap-block-button>
-                                    </div>
-                                </template>
-                            </div>
-                        </div>
-                    </div>
-                </template>
+  <div class="slds-grid">
+    <div class="slds-size--1-of-1">
+      <div class="slds-card">
+        <template if:true={loading}>
+          <div class="spinner-container slds-align-middle">
+            <lightning-spinner
+              alternative-text="Loading"
+              size="medium"
+            ></lightning-spinner>
+          </div>
+        </template>
+        <template if:false={loading}>
+          <div class="slds-grid slds-wrap slds-align--absolute-center">
+            <div
+              class="slds-size--1-of-1 slds-p-left--small slds-p-right--small slds-p-top--small slds-align-middle"
+            >
+              <p class="slds-text-body--regular slds-text-color_weak slds-wrap">
+                How aware is the individual of this consent?
+              </p>
             </div>
-        </div>
+            <div
+              class="slds-col slds-size--1-of-1 slds-align--absolute-center slds-p-around--x-small"
+            >
+              <div class="slds-grid slds-wrap slds-grid_align-center">
+                <template
+                  for:each={statusTypes}
+                  for:item="item"
+                  for:index="index"
+                >
+                  <div
+                    key={item.Name}
+                    class="slds-size--1-of-4 slds-p-around--xx-small"
+                  >
+                    <c-con-cap-block-button
+                      item={item}
+                      selected-item={selectedItemName}
+                      show-name="true"
+                      show-description="false"
+                      align="center"
+                      min-height="100px"
+                      min-widtht="50px"
+                      onbuttonclick={handleStatusTypeClick}
+                    >
+                    </c-con-cap-block-button>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
     </div>
+  </div>
 </template>

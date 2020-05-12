@@ -1,14 +1,10 @@
-.spinner-container{
-
-    position: relative;
-    min-height: 200px;
-    width: 100%;
-
+.spinner-container {
+  position: relative;
+  min-height: 200px;
+  width: 100%;
 }
 
-.button-container-width{
-
-    width: 120px !important;
-    height: 120px !important;
-
+.button-container-width {
+  width: 120px !important;
+  height: 120px !important;
 }

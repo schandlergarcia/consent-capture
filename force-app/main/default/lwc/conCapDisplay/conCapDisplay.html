@@ -1,51 +1,79 @@
 <template>
-    <article class="slds-card">
-        <ul>
-            <template if:true={loading}>
-                <div class="spinner-container slds-align-middle">
-                    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
-                </div>
+  <article class="slds-card">
+    <ul>
+      <template if:true={loading}>
+        <div class="spinner-container slds-align-middle">
+          <lightning-spinner
+            alternative-text="Loading"
+            size="medium"
+          ></lightning-spinner>
+        </div>
+      </template>
+      <template if:false={loading}>
+        <template if:true={emptyIndividualId}>
+          <div class="slds-box">
+            <div class="slds-inline_icon_text slds-grid">
+              <div
+                class="slds-col slds-align--absolute-center slds-align-middle"
+              >
+                <lightning-icon
+                  icon-name="utility:info"
+                  alternative-text="information"
+                  size="small"
+                ></lightning-icon>
+              </div>
+              <div class="slds-col slds-p-left--medium">
+                <p>
+                  No Individual Object has been created for this record, please
+                  create one in order to manage their consent records. Select
+                  'Next' to begin.
+                </p>
+              </div>
+            </div>
+          </div>
+        </template>
+        <template if:true={emptyConsentRecords}>
+          <div class="slds-box">
+            <div class="slds-inline_icon_text slds-grid">
+              <div
+                class="slds-col slds-align--absolute-center slds-align-middle"
+              >
+                <lightning-icon
+                  icon-name="utility:warning"
+                  alternative-text="information"
+                  size="small"
+                ></lightning-icon>
+              </div>
+              <div class="slds-col slds-p-left--medium">
+                <p>
+                  No Consent Records have been created for this record, please
+                  create one in order to manage their consent records. Select
+                  'Next' to begin.
+                </p>
+              </div>
+            </div>
+          </div>
+        </template>
+        <template if:true={hydratedConsentRecords}>
+          <div class="slds-p-around--medium">
+            <template
+              for:each={relatedCPTCRecords}
+              for:item="item"
+              for:index="index"
+            >
+              <c-con-cap-display-type
+                key={item.type}
+                item={item}
+              ></c-con-cap-display-type>
             </template>
-            <template if:false={loading}>
-                <template if:true={emptyIndividualId}>
-                    <div class="slds-box">
-                        <div class="slds-inline_icon_text slds-grid">
-                            <div class="slds-col slds-align--absolute-center slds-align-middle">
-                                <lightning-icon icon-name="utility:info" alternative-text="information"
-                                                size="small"></lightning-icon>
-                            </div>
-                            <div class="slds-col slds-p-left--medium">
-                                <p>No Individual Object has been created for this record, please create one in order to
-                                    manage their consent records. Select 'Next' to begin.</p>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-                <template if:true={emptyConsentRecords}>
-                    <div class="slds-box">
-                        <div class="slds-inline_icon_text slds-grid">
-                            <div class="slds-col slds-align--absolute-center slds-align-middle">
-                                <lightning-icon icon-name="utility:warning" alternative-text="information"
-                                                size="small"></lightning-icon>
-                            </div>
-                            <div class="slds-col slds-p-left--medium">
-                                <p>No Consent Records have been created for this record, please create one in order to
-                                    manage their consent records. Select 'Next' to begin.</p>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-                <template if:true={hydratedConsentRecords}>
-                    <div class="slds-p-around--medium">
-                        <template for:each={relatedCPTCRecords} for:item="item" for:index="index">
-                            <c-con-cap-display-type key={item.type} item={item}></c-con-cap-display-type>
-                        </template>
-                    </div>
-                </template>
-            </template>
-        </ul>
-    </article>
-    <template if:true={hydratedConsentRecords}>
-        <p class="slds-text-body--regular slds-text-color_weak slds-p-left--medium">Press 'Next' to create a new consent record!</p>
-    </template>
+          </div>
+        </template>
+      </template>
+    </ul>
+  </article>
+  <template if:true={hydratedConsentRecords}>
+    <p class="slds-text-body--regular slds-text-color_weak slds-p-left--medium">
+      Press 'Next' to create a new consent record!
+    </p>
+  </template>
 </template>

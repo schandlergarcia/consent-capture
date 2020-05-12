@@ -1,12 +1,12 @@
 ({
-    handleEffectiveToSet : function(component, event, helper){
+  handleEffectiveToSet: function(component, event, helper) {
+    console.log(event);
 
-        console.log(event);
+    var effectiveMonths = event.getParam("value");
 
-        var effectiveMonths = event.getParam('value');
-
-        component.set('v.effectiveMonths', (effectiveMonths.length > 0 ? effectiveMonths : null));
-
-    }
-
+    component.set(
+      "v.effectiveMonths",
+      effectiveMonths.length > 0 ? effectiveMonths : null
+    );
+  }
 });

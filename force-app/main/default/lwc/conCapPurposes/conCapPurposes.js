@@ -1,120 +1,95 @@
-import {LightningElement, track} from 'lwc';
+import { LightningElement, track } from "lwc";
 
-import getDataUseLegalBasis from '@salesforce/apex/ConsentCaptureService.getDataUseLegalBasis';
-import getDataUsePurpose from '@salesforce/apex/ConsentCaptureService.getDataUsePurpose';
+import getDataUseLegalBasis from "@salesforce/apex/ConsentCaptureService.getDataUseLegalBasis";
+import getDataUsePurpose from "@salesforce/apex/ConsentCaptureService.getDataUsePurpose";
 
 export default class ConCapPurposes extends LightningElement {
+  // Data
+  @track LegalBases;
+  @track purposes;
 
-    // Data
-    @track LegalBases;
-    @track purposes;
+  // State
+  @track selectedLegalBasisId;
+  @track totalItems;
 
-    // State
-    @track selectedLegalBasisId;
-    @track totalItems;
+  // State
+  @track selectedItemId;
+  @track selectedItemName;
+  @track selectedPurposeId;
+  @track selectedPurposeName;
+  @track loading = true;
 
-    // State
-    @track selectedItemId;
-    @track selectedItemName;
-    @track selectedPurposeId;
-    @track selectedPurposeName;
-    @track loading = true;
+  // Error Handling
+  @track error;
 
-    // Error Handling
-    @track error;
+  connectedCallback() {
+    getDataUseLegalBasis({})
+      .then(data => {
+        this.LegalBases = data;
+        this.totalItems = data.length;
 
-    connectedCallback(){
+        this.getInitialSelectedItemName(data[0]);
+      })
+      .catch(error => {
+        this.error = error;
+      });
+  }
 
-        getDataUseLegalBasis({}).then(data => {
+  getInitialSelectedItemName(data) {
+    let initialItem = { ...data };
+    this.selectedItemName = initialItem.Name;
+    this.selectedItemId = initialItem.Id;
+    this.returnDataUsePurpose(this.selectedItemId);
+  }
 
-            this.LegalBases = data;
-            this.totalItems = data.length;
+  returnDataUsePurpose(legalBasisId) {
+    getDataUsePurpose({ legalBasisId: legalBasisId })
+      .then(data => {
+        this.purposes = data;
+        this.endLoading();
+      })
+      .catch(error => {
+        this.error = error;
+        this.endLoading();
+      });
+  }
 
-            this.getInitialSelectedItemName(data[0])
+  endLoading() {
+    this.loading = false;
+  }
 
-        }).catch(error => {
+  handleLegalBasisClick(event) {
+    let eventBody = event.detail;
+    this.selectedItemId = eventBody.Id;
+    this.selectedItemName = eventBody.Name;
+    this.returnDataUsePurpose(eventBody.Id);
+  }
 
-            this.error = error;
+  handlePurposeClick(event) {
+    let eventBody = event.detail;
+    this.selectedPurposeId = eventBody.Id;
+    this.selectedPurposeName = eventBody.Name;
+    this.bubbleDataUsePurposeId(eventBody.Id);
+    this.bubbleDataUsePurposeName(eventBody.Name);
+  }
 
-        })
+  bubbleDataUsePurposeId(value) {
+    console.log("Sending Id:" + value);
 
-    }
+    const sendDataUsePurposeId = new CustomEvent("datausepurposeidset", {
+      detail: { value }
+    });
+    // Fire the custom event
+    this.dispatchEvent(sendDataUsePurposeId);
+  }
 
-    getInitialSelectedItemName(data){
+  bubbleDataUsePurposeName(value) {
+    console.log("Sending Name:" + value);
 
-        let initialItem = {... data};
-        this.selectedItemName = initialItem.Name;
-        this.selectedItemId = initialItem.Id;
-        this.returnDataUsePurpose(this.selectedItemId);
-
-    }
-
-
-    returnDataUsePurpose(legalBasisId){
-
-        getDataUsePurpose({'legalBasisId' : legalBasisId}).then(data => {
-
-            this.purposes = data;
-            this.endLoading();
-
-        }).catch(error => {
-
-            this.error = error;
-            this.endLoading();
-
-        })
-
-    }
-
-    endLoading() {
-
-        this.loading = false;
-
-    }
-
-    handleLegalBasisClick(event) {
-
-        let eventBody = event.detail;
-        this.selectedItemId = eventBody.Id;
-        this.selectedItemName = eventBody.Name;
-        this.returnDataUsePurpose(eventBody.Id);
-
-    }
-
-    handlePurposeClick(event) {
-
-        let eventBody = event.detail;
-        this.selectedPurposeId = eventBody.Id;
-        this.selectedPurposeName = eventBody.Name;
-        this.bubbleDataUsePurposeId(eventBody.Id);
-        this.bubbleDataUsePurposeName(eventBody.Name);
-
-    }
-
-    bubbleDataUsePurposeId(value){
-
-        console.log('Sending Id:' +  value);
-
-        const sendDataUsePurposeId = new CustomEvent('datausepurposeidset', {
-            detail: {value},
-        });
-        // Fire the custom event
-        this.dispatchEvent(sendDataUsePurposeId);
-
-
-
-    }
-
-    bubbleDataUsePurposeName(value){
-
-        console.log('Sending Name:' +  value);
-
-        const sendDataUsePurposeName = new CustomEvent('datausepurposenameset', {
-            detail: {value},
-        });
-        // Fire the custom event
-        this.dispatchEvent(sendDataUsePurposeName);
-
-    }
-
+    const sendDataUsePurposeName = new CustomEvent("datausepurposenameset", {
+      detail: { value }
+    });
+    // Fire the custom event
+    this.dispatchEvent(sendDataUsePurposeName);
+  }
 }

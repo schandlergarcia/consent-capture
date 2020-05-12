@@ -1,8 +1,4 @@
-<!--
- - Created by stephan.garcia on 2019-09-04.
- -->
-
 <design:component>
-    <design:attribute name="dataUsePurposeId" label="Data Use Purpose Id" />
-    <design:attribute name="dataUsePurposeName" label="Data Use Purpose Name" />
+  <design:attribute name="dataUsePurposeId" label="Data Use Purpose Id" />
+  <design:attribute name="dataUsePurposeName" label="Data Use Purpose Name" />
 </design:component>

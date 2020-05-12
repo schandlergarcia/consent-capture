@@ -1,12 +1,21 @@
-<!--
- - Created by stephan.garcia on 2019-09-01.
- -->
+<aura:component
+  implements="force:hasRecordId,lightning:availableForFlowScreens"
+  description="A Container for the Consent Capture Type Component"
+>
+  <aura:attribute
+    name="recordId"
+    type="String"
+    access="Global"
+    description="The recordId passed from the flow into the AuraComponent then to the LWC"
+  />
+  <aura:attribute
+    name="contactPointConsentType"
+    type="String"
+    access="Global"
+    description="The dataUsePurposeId passed from the LWC into the AuraComponent"
+  />
 
-<aura:component implements="force:hasRecordId,lightning:availableForFlowScreens" description="A Container for the Consent Capture Type Component">
-
-    <aura:attribute name="recordId" type="String" access="Global" description="The recordId passed from the flow into the AuraComponent then to the LWC"/>
-    <aura:attribute name="contactPointConsentType" type="String" access="Global" description="The dataUsePurposeId passed from the LWC into the AuraComponent"/>
-
-    <c:consentCaptureTypeSelector oncontactpointtypeset="{!c.handleContactPointTypeSet}"/>
-
+  <c:consentCaptureTypeSelector
+    oncontactpointtypeset="{!c.handleContactPointTypeSet}"
+  />
 </aura:component>

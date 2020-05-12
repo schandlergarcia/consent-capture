@@ -1,28 +1,27 @@
 ({
-    handleDataUsePurposeIdSet : function(component, event, helper){
+  handleDataUsePurposeIdSet: function(component, event, helper) {
+    console.log(event);
 
-        console.log(event);
+    var dataUsePurposeId = event.getParam("value");
 
-        var dataUsePurposeId = event.getParam('value');
+    console.log(dataUsePurposeId);
 
-        console.log(dataUsePurposeId);
+    component.set(
+      "v.dataUsePurposeId",
+      dataUsePurposeId.length > 0 ? dataUsePurposeId : null
+    );
+  },
 
-        component.set('v.dataUsePurposeId', (dataUsePurposeId.length > 0 ? dataUsePurposeId : null));
+  handleDataUsePurposeNameSet: function(component, event, helper) {
+    console.log(event);
 
+    var dataUsePurposeName = event.getParam("value");
 
-    },
+    console.log(dataUsePurposeName);
 
-    handleDataUsePurposeNameSet : function(component, event, helper){
-
-        console.log(event);
-
-        var dataUsePurposeName = event.getParam('value');
-
-        console.log(dataUsePurposeName);
-
-        component.set('v.dataUsePurposeName', (dataUsePurposeName.length > 0 ? dataUsePurposeName : null));
-
-
-    }
-
+    component.set(
+      "v.dataUsePurposeName",
+      dataUsePurposeName.length > 0 ? dataUsePurposeName : null
+    );
+  }
 });

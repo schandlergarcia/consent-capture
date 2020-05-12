@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>This is a general set of utilities and settings to manage the consent capture app exchange solution</description>
+    <description
+  >This is a general set of utilities and settings to manage the consent capture app exchange solution</description>
     <label>Consent Capture Utility</label>
     <pluralLabel>Consent Capture Utilities</pluralLabel>
     <visibility>Public</visibility>

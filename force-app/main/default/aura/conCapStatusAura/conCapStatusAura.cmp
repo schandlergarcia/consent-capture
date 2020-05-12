@@ -1,7 +1,20 @@
-<aura:component implements="force:hasRecordId,lightning:availableForFlowScreens" description="A Container for the Consent Status Type Component" access="global">
-    <aura:attribute name="recordId" type="String" access="Global" description="The recordId passed from the flow into the AuraComponent then to the LWC"/>
-    <aura:attribute name="statusType" type="String" access="Global" description="The captureType passed from the LWC into the AuraComponent"/>
+<aura:component
+  implements="force:hasRecordId,lightning:availableForFlowScreens"
+  description="A Container for the Consent Status Type Component"
+  access="global"
+>
+  <aura:attribute
+    name="recordId"
+    type="String"
+    access="Global"
+    description="The recordId passed from the flow into the AuraComponent then to the LWC"
+  />
+  <aura:attribute
+    name="statusType"
+    type="String"
+    access="Global"
+    description="The captureType passed from the LWC into the AuraComponent"
+  />
 
-    <c:conCapStatus onstatustypeset="{!c.handleStatusTypeSet}"/>
-
+  <c:conCapStatus onstatustypeset="{!c.handleStatusTypeSet}" />
 </aura:component>

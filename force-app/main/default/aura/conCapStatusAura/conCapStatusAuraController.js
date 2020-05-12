@@ -1,11 +1,9 @@
 ({
-    handleStatusTypeSet : function(component, event, helper){
+  handleStatusTypeSet: function(component, event, helper) {
+    console.log(event);
 
-        console.log(event);
+    var statusType = event.getParam("value");
 
-        var statusType = event.getParam('value');
-
-        component.set('v.statusType', (statusType.length > 0 ? statusType : null));
-
-    }
+    component.set("v.statusType", statusType.length > 0 ? statusType : null);
+  }
 });

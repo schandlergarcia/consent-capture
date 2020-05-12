@@ -1,7 +1,5 @@
-.spinner-container{
-
-    position: relative;
-    min-height: 80px;
-    width: 100%;
-
+.spinner-container {
+  position: relative;
+  min-height: 80px;
+  width: 100%;
 }

@@ -1,12 +1,9 @@
 ({
-    handleCaptureTypeSet : function(component, event, helper){
+  handleCaptureTypeSet: function(component, event, helper) {
+    console.log(event);
 
-        console.log(event);
+    var captureType = event.getParam("value");
 
-        var captureType = event.getParam('value');
-
-        component.set('v.captureType', (captureType.length > 0 ? captureType : null));
-
-    }
-
+    component.set("v.captureType", captureType.length > 0 ? captureType : null);
+  }
 });

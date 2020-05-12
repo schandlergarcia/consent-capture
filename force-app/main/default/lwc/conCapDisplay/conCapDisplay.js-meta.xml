@@ -10,9 +10,27 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <property name="recordId" label="Record Id" description="Flow input field" type="String" role="inputOnly" />
-            <property name="sObjectType" label="SObject Type" description="Flow output field" type="String" role="outputOnly" />
-            <property name="individualId" label="Individual Id" description="Flow output field" type="String" role="outputOnly" />
+            <property
+        name="recordId"
+        label="Record Id"
+        description="Flow input field"
+        type="String"
+        role="inputOnly"
+      />
+            <property
+        name="sObjectType"
+        label="SObject Type"
+        description="Flow output field"
+        type="String"
+        role="outputOnly"
+      />
+            <property
+        name="individualId"
+        label="Individual Id"
+        description="Flow output field"
+        type="String"
+        role="outputOnly"
+      />
         </targetConfig>
         <targetConfig targets="lightning__RecordPage">
             <objects>

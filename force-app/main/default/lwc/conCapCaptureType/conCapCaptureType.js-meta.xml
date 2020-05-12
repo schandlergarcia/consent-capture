@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>46.0</apiVersion>
-    <description>Capture Types are used to identify the method in which the consent was captured from the individual.
+    <description
+  >Capture Types are used to identify the method in which the consent was captured from the individual.
     </description>
     <isExposed>true</isExposed>
     <masterLabel>Consent Capture - Capture Type</masterLabel>
