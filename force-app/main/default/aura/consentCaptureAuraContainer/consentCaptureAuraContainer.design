@@ -1,5 +1,0 @@
-<design:component>
-  <design:attribute name="recordId" label="Record Id" />
-  <design:attribute name="individualId" label="Individual Id" />
-  <design:attribute name="sObjectType" label="SObject Type" />
-</design:component>

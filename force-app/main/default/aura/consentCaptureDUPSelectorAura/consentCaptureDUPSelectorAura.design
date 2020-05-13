@@ -1,4 +1,0 @@
-<design:component>
-  <design:attribute name="dataUsePurposeId" label="Data Use Purpose Id" />
-  <design:attribute name="dataUsePurposeName" label="Data Use Purpose Name" />
-</design:component>

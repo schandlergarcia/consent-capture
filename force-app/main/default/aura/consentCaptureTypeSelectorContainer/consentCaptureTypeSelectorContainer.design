@@ -1,6 +1,0 @@
-<design:component>
-  <design:attribute
-    name="contactPointConsentType"
-    label="Contact Point Consent Type"
-  />
-</design:component>

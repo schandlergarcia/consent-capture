@@ -1,3 +1,0 @@
-<design:component>
-  <design:attribute name="captureType" label="Capture Contact Point Type" />
-</design:component>
