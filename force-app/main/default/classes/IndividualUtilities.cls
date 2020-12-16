@@ -130,7 +130,7 @@ public with sharing class IndividualUtilities {
   }
 
   /**
-   * getIndividualIdFromPersonAccount as this is part of a managed package - we can't implicitly reference person account fields, otherwise
+   * getIndividualIdFromPersonAccount as this is part of a managed package - we can't reference person account fields, otherwise
    * we will create a dependency on that feature being enabled. In this instance we can use dynamic SOQL to query the field and then check if
    * it has been found
    * @param  recordId recordId the record Id from the page
